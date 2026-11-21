@@ -20,11 +20,11 @@ def inspect(path: Path) -> dict:
 
 def validate(data: dict) -> None:
     for edges in [*data["blocks"].values(), *(r["edges"] for r in data["replacements"])]:
-            assert len({(r, c) for r, c, _ in edges}) == len(edges)
-            for row, column, cost in edges:
-                assert row in data["rows"]
-                assert column in data["capacity"] or (column == "discard" and row in data["discard_rows"])
-                assert np.isfinite(cost)
+        assert len({(r, c) for r, c, _ in edges}) == len(edges)
+        for row, column, cost in edges:
+            assert row in data["rows"]
+            assert column in data["capacity"] or (column == "discard" and row in data["discard_rows"])
+            assert np.isfinite(cost)
 
 
 def main() -> None:
