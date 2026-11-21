@@ -1,0 +1,88 @@
+{
+  "epsilon": 0.25,
+  "tolerance": 1e-06,
+  "budget_bytes": 2097152,
+  "rows": {
+    "a": 1,
+    "b": 1
+  },
+  "capacity": {
+    "north": 1,
+    "east": 2
+  },
+  "blocks": {
+    "a-capture": [
+      [
+        "a",
+        "north",
+        0
+      ],
+      [
+        "a",
+        "east",
+        0
+      ]
+    ],
+    "b-capture": [
+      [
+        "b",
+        "north",
+        0
+      ],
+      [
+        "b",
+        "east",
+        0
+      ]
+    ]
+  },
+  "replacements": [
+    {
+      "revision": "r2",
+      "replace": "b-capture",
+      "edges": [
+        [
+          "b",
+          "north",
+          -0.2
+        ],
+        [
+          "b",
+          "east",
+          0
+        ]
+      ]
+    }
+  ],
+  "discard_rows": [],
+  "dy": [
+    [
+      "a",
+      "north",
+      1
+    ]
+  ],
+  "d_objective": 0,
+  "timeline": [
+    [
+      "arrive",
+      "a-capture"
+    ],
+    [
+      "arrive",
+      "b-capture"
+    ],
+    [
+      "pin",
+      "r1"
+    ],
+    [
+      "replace",
+      "r2"
+    ],
+    [
+      "reverse",
+      "r1"
+    ]
+  ]
+}
