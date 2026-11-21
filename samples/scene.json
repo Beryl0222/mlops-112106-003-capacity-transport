@@ -1,0 +1,153 @@
+{
+  "epsilon": 0.25,
+  "tolerance": 1e-06,
+  "budget_bytes": 2097152,
+  "rows": {
+    "a": 1,
+    "b": 1,
+    "c": 0.5,
+    "d": 1
+  },
+  "capacity": {
+    "north": 1.4,
+    "east": 0.9,
+    "south": 0.9
+  },
+  "blocks": {
+    "ab": [
+      [
+        "a",
+        "north",
+        0.1
+      ],
+      [
+        "a",
+        "east",
+        0.6
+      ],
+      [
+        "b",
+        "north",
+        0.1
+      ],
+      [
+        "b",
+        "east",
+        0.4
+      ]
+    ],
+    "cd": [
+      [
+        "c",
+        "east",
+        0.2
+      ],
+      [
+        "c",
+        "south",
+        0.5
+      ],
+      [
+        "d",
+        "north",
+        0.1
+      ],
+      [
+        "d",
+        "south",
+        0.4
+      ],
+      [
+        "d",
+        "discard",
+        0.9
+      ]
+    ]
+  },
+  "replacements": [
+    {
+      "revision": "r2",
+      "replace": "ab",
+      "edges": [
+        [
+          "a",
+          "north",
+          0.1
+        ],
+        [
+          "b",
+          "north",
+          0.1
+        ]
+      ]
+    },
+    {
+      "revision": "r3",
+      "replace": "ab",
+      "edges": [
+        [
+          "a",
+          "north",
+          0.1
+        ],
+        [
+          "a",
+          "east",
+          0.8
+        ],
+        [
+          "b",
+          "north",
+          0.1
+        ],
+        [
+          "b",
+          "south",
+          0.4
+        ]
+      ]
+    }
+  ],
+  "discard_rows": [
+    "d"
+  ],
+  "dy": [
+    [
+      "a",
+      "north",
+      1.2
+    ],
+    [
+      "d",
+      "discard",
+      -1.1
+    ]
+  ],
+  "d_objective": 0.3,
+  "timeline": [
+    [
+      "arrive",
+      "ab"
+    ],
+    [
+      "arrive",
+      "cd"
+    ],
+    [
+      "pin",
+      "r1"
+    ],
+    [
+      "replace",
+      "r2"
+    ],
+    [
+      "reverse",
+      "r1"
+    ],
+    [
+      "replace",
+      "r3"
+    ]
+  ]
+}
